@@ -15,6 +15,7 @@
 
 </ion-header>
 
+<!-- Old code for basic list taken from Tour of Heros
 <ion-content>
   <ion-list inset>
     <ion-item *ngFor="let user of users">
@@ -22,4 +23,15 @@
       <p>{{user.email}}</p>
     </ion-item>
   </ion-list>
+</ion-content>-->
+
+<ion-content>
+  <ion-list inset>
+    <ion-item *ngFor="let user of users">
+      <a (click)="openModal(user)">
+        {{user.first_name}}, {{user.last_name}}
+      </a>
+    </ion-item>
+  </ion-list>
+
 </ion-content>
