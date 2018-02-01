@@ -26,8 +26,8 @@ export class UserProvider {
   public getUsers(): Observable<User>{
     return this.http.get<User>(this.url);
   }
-  public getUser(): void{
-    console.log('Get User');
+  public getUser(id: string): Observable<User>{
+    return this.http.get<User>(this.url+'/view/'+id);
   }
   public editUser(): void{
     console.log('Edit User');

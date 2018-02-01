@@ -4,13 +4,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { UserProvider } from '../../providers/user/user';
 
 import { User } from '../../models/user';
+import { UserDetailsPage } from '../user-details/user-details';
 
-/**
- * Generated class for the UsersPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -18,14 +13,16 @@ import { User } from '../../models/user';
   templateUrl: 'users.html',
 })
 export class UsersPage {
-
+  selectedUser: any;
   users: User;
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     private userProvider: UserProvider
-  ) {}
+  ) {
+    this.selectedUser = navParams.get('user');
+  }
 
   ionViewDidLoad() {
     this.getUsers();
@@ -43,4 +40,9 @@ export class UsersPage {
         }
       );
     }
+
+  userTapped(event, user) {
+      this.navCtrl.push(UserDetailsPage, user._id);
+      }
+
 }
