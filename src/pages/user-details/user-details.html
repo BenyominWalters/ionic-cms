@@ -16,4 +16,11 @@
     <p>Admin: {{user.admin}}</p>
   </ion-list>
 
+  <button ion-item *ngFor="let user of users" (click)="userTapped($event, user)">
+    Edit
+  </button>
+  <button>Edit</button>
+<!--<button [routerLink]="['/users/edit/', user._id]">Edit</button>-->
+  <button>Delete</button>
+
 </ion-content>

@@ -13,23 +13,16 @@ import { UserDetailsPage } from '../user-details/user-details';
   templateUrl: 'users.html',
 })
 export class UsersPage {
-  selectedUser: any;
   users: User;
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     private userProvider: UserProvider
-  ) {
-    this.selectedUser = navParams.get('user');
-  }
+  ) {}
 
   ionViewDidLoad() {
     this.getUsers();
-    this.userProvider.getUser();
-    this.userProvider.editUser();
-    this.userProvider.createUser();
-    this.userProvider.deleteUser();
   }
 
   getUsers(): void {

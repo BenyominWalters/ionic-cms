@@ -21,9 +21,7 @@ export class UserDetailsPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad UserDetailsPage');
-    this.getUser(this.navParams.data);
-    console.log(this.user);
+      this.getUser(this.navParams.data);
   }
 
   getUser(id: string): void {
